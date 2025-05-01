@@ -1,23 +1,29 @@
 import React, { useState } from 'react'
-import Input from '../components/input'
-import Button from '../components/button'
+import Input from '../components/Input'
+import Button from '../components/Button'
 import {useNavigate} from  "react-router"
+import { useAuth } from "../context/auth";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
+  const { handleLogin } = useAuth();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email)
-    console.log(password)
-    navigate("/dashboard")
-  }
+    try {
+      await handleLogin(email, password);
+      alert("Login realizado com sucesso");
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Erro ao fazer login");
+    }
+  };
 
     return (
     <>
-
     <div className="flex min-h-full flex-1 flex-col justify-center bg-blue-100 px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <img
