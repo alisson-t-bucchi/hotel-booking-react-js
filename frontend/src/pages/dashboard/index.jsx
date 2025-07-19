@@ -97,10 +97,11 @@ export default function DashboardPage() {
             Booking List
           </h2>
           <div className='flex justify-end mb-4'>
-            <Button text="New Reservation" onclick={() => setIsModalOpen(true)} />
+            <Button text="New Reservation" onClick={() => setIsModalOpen(true)} />
           </div>
         </div>
         <Table headers={headers} data={bookings} />
+        {/* inserindo modal (caixa de dialogo para chamar a atenção) */}
       </div>
       {isModalOpen && (
         <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen}>

@@ -1,4 +1,4 @@
-import Modal from "react-modal";
+import Modal from "react-modal"
 
 export default function ModalComponent({ children, isOpen, setIsOpen }) {
   return (
