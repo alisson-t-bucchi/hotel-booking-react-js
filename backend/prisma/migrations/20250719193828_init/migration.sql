@@ -1,9 +1,9 @@
 -- CreateTable
 CREATE TABLE `User` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `email` VARCHAR(191) NOT NULL,
-    `username` VARCHAR(191) NOT NULL,
-    `password` VARCHAR(191) NOT NULL,
+    `email` VARCHAR(50) NOT NULL,
+    `username` VARCHAR(25) NOT NULL,
+    `password` VARCHAR(25) NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
@@ -15,7 +15,7 @@ CREATE TABLE `User` (
 -- CreateTable
 CREATE TABLE `Booking` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(191) NOT NULL,
+    `name` VARCHAR(50) NOT NULL,
     `people` INTEGER NOT NULL,
     `checkIn` DATETIME(3) NOT NULL,
     `checkOut` DATETIME(3) NOT NULL,
